@@ -461,23 +461,23 @@ char *yytext;
 #include<stdio.h>
 #include<stdlib.h>
 
-/* 
-// Included to allow information about tokens from Bison file to propagate to here 
+
+// Included to allow information about tokens from Bison file to propagate to here
 #include "example1.tab.h" // Leave commented out until Milestone Two
-*/
- 
+
+
 void printer(char*);  // Forward declaration of printing function
 
 
 /* After the verbatim code, we may declare names that correspond to
  * common patterns that will show up in the rules.  A lot may be
  * done here, but I typically keep this simple, and let the rules
- * handle everything else 
+ * handle everything else
  */
-/* Below the %% are the "rules" for the lexical analyzer.  They are 
+/* Below the %% are the "rules" for the lexical analyzer.  They are
  * a sequence of regular expressions on the left, and a fragment
  * of C code on the right.  The code may do anything you like, but
- * any procedures you need for it should be declared at the bottom 
+ * any procedures you need for it should be declared at the bottom
  * of the file.
  */
 #line 484 "example1.lex.c"
@@ -751,17 +751,17 @@ do_action:	/* This label is used only to access EOF actions. */
 case 1:
 YY_RULE_SETUP
 #line 42 "example1.lex"
-{ printer("Identifier"); }
+{ printer("Identifier"); return IDENT;}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
 #line 43 "example1.lex"
-{ printer("Integer"); }
+{ printer("Integer"); return INT;}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
 #line 44 "example1.lex"
-{ printer("Equals"); }
+{ printer("Equals"); return EQUALS;}
 	YY_BREAK
 case 4:
 /* rule 4 can match eol */
@@ -1784,5 +1784,4 @@ void printer(char* str)
 {
   printf("      Recognized %s: %s\n", str, yytext);
 }
-
 

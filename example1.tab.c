@@ -1557,5 +1557,3 @@ int main() {
     fprintf(stderr, "Weird value: %d\n", res);
 }
 
-
-

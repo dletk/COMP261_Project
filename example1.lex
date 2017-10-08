@@ -10,11 +10,11 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-/* 
-// Included to allow information about tokens from Bison file to propagate to here 
+
+// Included to allow information about tokens from Bison file to propagate to here
 #include "example1.tab.h" // Leave commented out until Milestone Two
-*/
- 
+
+
 void printer(char*);  // Forward declaration of printing function
 
 
@@ -24,24 +24,24 @@ void printer(char*);  // Forward declaration of printing function
 /* After the verbatim code, we may declare names that correspond to
  * common patterns that will show up in the rules.  A lot may be
  * done here, but I typically keep this simple, and let the rules
- * handle everything else 
+ * handle everything else
  */
 
 digit	[0-9]
 alpha	[a-z,A-Z]
 
 
-/* Below the %% are the "rules" for the lexical analyzer.  They are 
+/* Below the %% are the "rules" for the lexical analyzer.  They are
  * a sequence of regular expressions on the left, and a fragment
  * of C code on the right.  The code may do anything you like, but
- * any procedures you need for it should be declared at the bottom 
+ * any procedures you need for it should be declared at the bottom
  * of the file.
  */
 %%
 
-{alpha}({alpha}|{digit})*	{ printer("Identifier"); }
-{digit}+	 	{ printer("Integer"); }
-"="                     { printer("Equals"); }
+{alpha}({alpha}|{digit})*	{ printer("Identifier"); return IDENT;}
+{digit}+	 	{ printer("Integer"); return INT;}
+"="                     { printer("Equals"); return EQUALS;}
 
 [ \t\n]+		;  /*when see whitespace, do nothing*/
 
@@ -58,4 +58,3 @@ void printer(char* str)
 {
   printf("      Recognized %s: %s\n", str, yytext);
 }
-
