@@ -43,10 +43,14 @@ alpha	[_,a-z,A-Z]
 {alpha}({alpha}|{digit})*	{ printer("Identifier"); }
 [+|-]?{digit}+	 	{ printer("Integer"); }
 "="                     { printer("Equals"); }
-"+"   {printer("Plus");}
-"-"   {printer("Minus");}
-"*"   {printer("Times");}
-"/"   {printer("Divide");}
+({alpha}({alpha}|{digit})*)"+"   {printer("Identifier Plus");}
+([+|-]?{digit}+)"+"   {printer("Integer Plus");}
+({alpha}({alpha}|{digit})*)"-"   {printer("Identifier Minus");}
+([+|-]?{digit}+)"-"   {printer("Integer Minus");}
+({alpha}({alpha}|{digit})*)"*"   {printer("Identifier Times");}
+([+|-]?{digit}+)"*"   {printer("Integer Times");}
+({alpha}({alpha}|{digit})*)"/"   {printer("Identifier Divide");}
+([+|-]?{digit}+)"/"   {printer("Integer Divide");}
 "("   {printer("LParen");}
 ")"   {printer("RParen");}
 {digit}+"."{digit}+			{printer("Float");}
