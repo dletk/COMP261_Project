@@ -27,9 +27,9 @@ void printer(char*);  // Forward declaration of printing function
  * handle everything else
  */
 
+arithmetics [+, -, *, /, (, )]
 digit	[0-9]
 alpha	[_,a-z,A-Z]
-arithmetics [+, -, *, /, (, )]
 
 
 /* Below the %% are the "rules" for the lexical analyzer.  They are
@@ -49,6 +49,9 @@ arithmetics [+, -, *, /, (, )]
 "/"   {printer("Divide");}
 "("   {printer("LParen");}
 ")"   {printer("RParen");}
+{digit}+"."{digit}+			{printer("Float");}
+
+{alpha}({alpha}|{digit})*"="{alpha}({alpha}|{digit})*			{printer("Assignment");}
 
 [ \t\n]+		;  /*when see whitespace, do nothing*/
 
