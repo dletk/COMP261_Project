@@ -51,7 +51,7 @@ alpha	[_,a-z,A-Z]
 ")"   {printer("RParen");}
 {digit}+"."{digit}+			{printer("Float");}
 
-{alpha}({alpha}|{digit})*"="{alpha}({alpha}|{digit})*			{printer("Assignment");}
+{alpha}({alpha}|{digit})*"="{alpha}*({alpha}|{digit})*			{printer("Assignment");}
 
 [ \t\n]+		;  /*when see whitespace, do nothing*/
 
