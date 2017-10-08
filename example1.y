@@ -64,7 +64,7 @@ void parseprint(char* str)
 
 
 int main() {
-  fprintf(stderr, "Enter statements/expressions to parse:\n"
+  fprintf(stderr, "Enter statements/expressions to parse:\n");
   int res = yyparse();
   if (res == 0)
     fprintf(stderr, "Successful parsing.\n");

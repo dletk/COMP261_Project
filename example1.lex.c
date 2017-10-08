@@ -1,5 +1,6 @@
+#line 2 "example1.lex.c"
 
-#line 3 "lex.yy.c"
+#line 4 "example1.lex.c"
 
 #define  YY_INT_ALIGNED short int
 
@@ -360,8 +361,8 @@ static void yy_fatal_error (yyconst char msg[]  );
 	*yy_cp = '\0'; \
 	(yy_c_buf_p) = yy_cp;
 
-#define YY_NUM_RULES 21
-#define YY_END_OF_BUFFER 22
+#define YY_NUM_RULES 5
+#define YY_END_OF_BUFFER 6
 /* This struct is not used in this scanner,
    but its presence is necessary. */
 struct yy_trans_info
@@ -369,12 +370,10 @@ struct yy_trans_info
 	flex_int32_t yy_verify;
 	flex_int32_t yy_nxt;
 	};
-static yyconst flex_int16_t yy_accept[35] =
+static yyconst flex_int16_t yy_accept[13] =
     {   0,
-        0,    0,   22,   21,   20,   16,   17,   21,    1,    2,
-        3,   20,    2,   10,    4,    1,    7,   13,   19,   11,
-        5,    8,    0,   14,   19,   19,   19,   18,   19,   12,
-        6,    9,   15,    0
+        0,    0,    6,    5,    4,    1,    2,    3,    4,    1,
+        2,    0
     } ;
 
 static yyconst flex_int32_t yy_ec[256] =
@@ -382,17 +381,17 @@ static yyconst flex_int32_t yy_ec[256] =
         1,    1,    1,    1,    1,    1,    1,    1,    2,    2,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    2,    1,    1,    1,    1,    1,    1,    1,    3,
-        4,    5,    6,    7,    8,    9,   10,   11,   11,   11,
-       11,   11,   11,   11,   11,   11,   11,    1,    1,    1,
-       12,    1,    1,    1,    7,    7,    7,    7,    7,    7,
-        7,    7,    7,    7,    7,    7,    7,    7,    7,    7,
-        7,    7,    7,    7,    7,    7,    7,    7,    7,    7,
-        1,    1,    1,    1,    7,    1,    7,    7,    7,    7,
+        1,    2,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    3,    1,    1,    1,    4,    4,    4,
+        4,    4,    4,    4,    4,    4,    4,    1,    1,    1,
+        5,    1,    1,    1,    3,    3,    3,    3,    3,    3,
+        3,    3,    3,    3,    3,    3,    3,    3,    3,    3,
+        3,    3,    3,    3,    3,    3,    3,    3,    3,    3,
+        1,    1,    1,    1,    1,    1,    3,    3,    3,    3,
 
-        7,    7,    7,    7,    7,    7,    7,    7,    7,    7,
-        7,    7,    7,    7,    7,    7,    7,    7,    7,    7,
-        7,    7,    1,   13,    1,    1,    1,    1,    1,    1,
+        3,    3,    3,    3,    3,    3,    3,    3,    3,    3,
+        3,    3,    3,    3,    3,    3,    3,    3,    3,    3,
+        3,    3,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
@@ -409,46 +408,33 @@ static yyconst flex_int32_t yy_ec[256] =
         1,    1,    1,    1,    1
     } ;
 
-static yyconst flex_int32_t yy_meta[14] =
+static yyconst flex_int32_t yy_meta[6] =
     {   0,
-        1,    1,    1,    1,    1,    2,    2,    2,    1,    1,
-        2,    1,    2
+        1,    2,    1,    3,    1
     } ;
 
-static yyconst flex_int16_t yy_base[36] =
+static yyconst flex_int16_t yy_base[15] =
     {   0,
-        0,    0,   37,   46,   34,   46,   46,   24,    9,   17,
-       46,   30,    0,   46,   46,    0,   46,   46,   22,   46,
-       46,   46,   20,   46,   19,   27,   13,   34,    0,   46,
-       46,   46,   46,   46,   16
+        0,    0,   10,   11,    0,    3,    0,   11,    0,    0,
+        0,   11,    7,    5
     } ;
 
-static yyconst flex_int16_t yy_def[36] =
+static yyconst flex_int16_t yy_def[15] =
     {   0,
-       34,    1,   34,   34,   34,   34,   34,   34,   34,   34,
-       34,   34,   10,   34,   34,    9,   34,   34,   35,   34,
-       34,   34,   34,   34,   34,   34,   34,   34,   26,   34,
-       34,   34,   34,    0,   34
+       12,    1,   12,   12,   13,   12,   14,   12,   13,    6,
+       14,    0,   12,   12
     } ;
 
-static yyconst flex_int16_t yy_nxt[60] =
+static yyconst flex_int16_t yy_nxt[17] =
     {   0,
-        4,    5,    6,    7,    4,    8,    9,    8,    4,    4,
-       10,   11,    8,   14,   15,   16,   17,   25,   18,   16,
-       19,   20,   21,   27,   22,   23,   24,   13,   26,   27,
-       28,   12,   27,   29,   13,   12,   34,   29,   30,   31,
-       34,   32,   34,   33,   28,    3,   34,   34,   34,   34,
-       34,   34,   34,   34,   34,   34,   34,   34,   34
+        4,    5,    6,    7,    8,   10,   10,   11,    9,   12,
+        3,   12,   12,   12,   12,   12
     } ;
 
-static yyconst flex_int16_t yy_chk[60] =
+static yyconst flex_int16_t yy_chk[17] =
     {   0,
-        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    9,    9,    9,    9,   35,    9,    9,
-        9,   10,   10,   27,   10,   10,   10,   10,   19,   25,
-       23,   12,   19,   26,    8,    5,    3,   26,   28,   28,
-        0,   28,    0,   28,   28,   34,   34,   34,   34,   34,
-       34,   34,   34,   34,   34,   34,   34,   34,   34
+        1,    1,    1,    1,    1,    6,    6,   14,   13,    3,
+       12,   12,   12,   12,   12,   12
     } ;
 
 static yy_state_type yy_last_accepting_state;
@@ -465,36 +451,36 @@ int yy_flex_debug = 0;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "myLang.lex"
+#line 1 "example1.lex"
 /* ********************************************************************* */
 /* The code between the brackets below will be included verbatim at the
  * top of the C file flex creates.  This includes any needed include
  * files and a few declarations...
  */
-#line 10 "myLang.lex"
+#line 10 "example1.lex"
 #include<stdio.h>
 #include<stdlib.h>
 
-
-// Included to allow information about tokens from Bison file to propagate to here
+/* 
+// Included to allow information about tokens from Bison file to propagate to here 
 #include "example1.tab.h" // Leave commented out until Milestone Two
-
-
+*/
+ 
 void printer(char*);  // Forward declaration of printing function
 
 
 /* After the verbatim code, we may declare names that correspond to
  * common patterns that will show up in the rules.  A lot may be
  * done here, but I typically keep this simple, and let the rules
- * handle everything else
+ * handle everything else 
  */
-/* Below the %% are the "rules" for the lexical analyzer.  They are
+/* Below the %% are the "rules" for the lexical analyzer.  They are 
  * a sequence of regular expressions on the left, and a fragment
  * of C code on the right.  The code may do anything you like, but
- * any procedures you need for it should be declared at the bottom
+ * any procedures you need for it should be declared at the bottom 
  * of the file.
  */
-#line 498 "lex.yy.c"
+#line 484 "example1.lex.c"
 
 #define INITIAL 0
 
@@ -676,10 +662,10 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
     
-#line 41 "myLang.lex"
+#line 40 "example1.lex"
 
 
-#line 683 "lex.yy.c"
+#line 669 "example1.lex.c"
 
 	if ( !(yy_init) )
 		{
@@ -732,13 +718,13 @@ yy_match:
 			while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 				{
 				yy_current_state = (int) yy_def[yy_current_state];
-				if ( yy_current_state >= 35 )
+				if ( yy_current_state >= 13 )
 					yy_c = yy_meta[(unsigned int) yy_c];
 				}
 			yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
 			++yy_cp;
 			}
-		while ( yy_base[yy_current_state] != 46 );
+		while ( yy_base[yy_current_state] != 11 );
 
 yy_find_action:
 		yy_act = yy_accept[yy_current_state];
@@ -764,111 +750,31 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 43 "myLang.lex"
-{ printer("Identifier"); return IDENT;}
+#line 42 "example1.lex"
+{ printer("Identifier"); }
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 44 "myLang.lex"
-{ printer("Integer"); return INT;}
+#line 43 "example1.lex"
+{ printer("Integer"); }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 45 "myLang.lex"
-{ printer("Equals");return EQUALS;}
+#line 44 "example1.lex"
+{ printer("Equals"); }
 	YY_BREAK
 case 4:
+/* rule 4 can match eol */
 YY_RULE_SETUP
-#line 46 "myLang.lex"
-{printer("Identifier Plus");}
+#line 46 "example1.lex"
+;  /*when see whitespace, do nothing*/
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 47 "myLang.lex"
-{printer("Integer Plus");}
-	YY_BREAK
-case 6:
-YY_RULE_SETUP
-#line 48 "myLang.lex"
-{printer("Float Plus");}
-	YY_BREAK
-case 7:
-YY_RULE_SETUP
-#line 49 "myLang.lex"
-{printer("Identifier Minus");}
-	YY_BREAK
-case 8:
-YY_RULE_SETUP
-#line 50 "myLang.lex"
-{printer("Integer Minus");}
-	YY_BREAK
-case 9:
-YY_RULE_SETUP
-#line 51 "myLang.lex"
-{printer("Float Minus");}
-	YY_BREAK
-case 10:
-YY_RULE_SETUP
-#line 52 "myLang.lex"
-{printer("Identifier Times");}
-	YY_BREAK
-case 11:
-YY_RULE_SETUP
-#line 53 "myLang.lex"
-{printer("Integer Times");}
-	YY_BREAK
-case 12:
-YY_RULE_SETUP
-#line 54 "myLang.lex"
-{printer("Float Times");}
-	YY_BREAK
-case 13:
-YY_RULE_SETUP
-#line 55 "myLang.lex"
-{printer("Identifier Divide");}
-	YY_BREAK
-case 14:
-YY_RULE_SETUP
-#line 56 "myLang.lex"
-{printer("Integer Divide");}
-	YY_BREAK
-case 15:
-YY_RULE_SETUP
-#line 57 "myLang.lex"
-{printer("Float Divide");}
-	YY_BREAK
-case 16:
-YY_RULE_SETUP
-#line 58 "myLang.lex"
-{printer("LParen");}
-	YY_BREAK
-case 17:
-YY_RULE_SETUP
-#line 59 "myLang.lex"
-{printer("RParen");}
-	YY_BREAK
-case 18:
-YY_RULE_SETUP
-#line 60 "myLang.lex"
-{printer("Float");}
-	YY_BREAK
-case 19:
-YY_RULE_SETUP
-#line 62 "myLang.lex"
-{printer("Assignment");}
-	YY_BREAK
-case 20:
-/* rule 20 can match eol */
-YY_RULE_SETUP
-#line 64 "myLang.lex"
-;  /*when see whitespace, do nothing*/
-	YY_BREAK
-case 21:
-YY_RULE_SETUP
-#line 68 "myLang.lex"
+#line 50 "example1.lex"
 ECHO;
 	YY_BREAK
-#line 872 "lex.yy.c"
+#line 778 "example1.lex.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1160,7 +1066,7 @@ static int yy_get_next_buffer (void)
 		while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 			{
 			yy_current_state = (int) yy_def[yy_current_state];
-			if ( yy_current_state >= 35 )
+			if ( yy_current_state >= 13 )
 				yy_c = yy_meta[(unsigned int) yy_c];
 			}
 		yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
@@ -1188,11 +1094,11 @@ static int yy_get_next_buffer (void)
 	while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 		{
 		yy_current_state = (int) yy_def[yy_current_state];
-		if ( yy_current_state >= 35 )
+		if ( yy_current_state >= 13 )
 			yy_c = yy_meta[(unsigned int) yy_c];
 		}
 	yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
-	yy_is_jam = (yy_current_state == 34);
+	yy_is_jam = (yy_current_state == 12);
 
 	return yy_is_jam ? 0 : yy_current_state;
 }
@@ -1865,7 +1771,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 68 "myLang.lex"
+#line 50 "example1.lex"
 
 
 
@@ -1878,4 +1784,5 @@ void printer(char* str)
 {
   printf("      Recognized %s: %s\n", str, yytext);
 }
+
 
