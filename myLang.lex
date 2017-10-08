@@ -45,15 +45,19 @@ alpha	[_,a-z,A-Z]
 "="                     { printer("Equals"); }
 ({alpha}({alpha}|{digit})*)"+"   {printer("Identifier Plus");}
 ([+|-]?{digit}+)"+"   {printer("Integer Plus");}
+[+|-]?{digit}+"."{digit}+"+"   {printer("Float Plus");}
 ({alpha}({alpha}|{digit})*)"-"   {printer("Identifier Minus");}
 ([+|-]?{digit}+)"-"   {printer("Integer Minus");}
+[+|-]?{digit}+"."{digit}+"-"   {printer("Float Minus");}
 ({alpha}({alpha}|{digit})*)"*"   {printer("Identifier Times");}
 ([+|-]?{digit}+)"*"   {printer("Integer Times");}
+[+|-]?{digit}+"."{digit}+"*"   {printer("Float Times");}
 ({alpha}({alpha}|{digit})*)"/"   {printer("Identifier Divide");}
 ([+|-]?{digit}+)"/"   {printer("Integer Divide");}
+[+|-]?{digit}+"."{digit}+"/"   {printer("Float Divide");}
 "("   {printer("LParen");}
 ")"   {printer("RParen");}
-{digit}+"."{digit}+			{printer("Float");}
+[+|-]?{digit}+"."{digit}+			{printer("Float");}
 
 {alpha}({alpha}|{digit})*"="{alpha}*({alpha}|{digit})*			{printer("Assignment");}
 
