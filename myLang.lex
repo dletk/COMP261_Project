@@ -10,10 +10,10 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-
+/*
 // Included to allow information about tokens from Bison file to propagate to here
 #include "myLang.tab.h" // Leave commented out until Milestone Two
-
+*/
 
 void printer(char*);  // Forward declaration of printing function
 
@@ -27,7 +27,7 @@ void printer(char*);  // Forward declaration of printing function
  * handle everything else
  */
 
-arithmetics [+, -, *, /, (, )]
+arithmetics [+, -, *, /, /(, /)]
 digit	[0-9]
 alpha	[_,a-z,A-Z]
 
@@ -40,23 +40,15 @@ alpha	[_,a-z,A-Z]
  */
 %%
 
-{alpha}({alpha}|{digit})*	{ printer("Identifier"); return IDENT;}
-[+|-]?{digit}+	 	{ printer("Integer"); return INT;}
-"="                     { printer("Equals");return EQUALS;}
-({alpha}({alpha}|{digit})*)"+"   {printer("Identifier Plus");}
-([+|-]?{digit}+)"+"   {printer("Integer Plus");}
-[+|-]?{digit}+"."{digit}+"+"   {printer("Float Plus");}
-({alpha}({alpha}|{digit})*)"-"   {printer("Identifier Minus");}
-([+|-]?{digit}+)"-"   {printer("Integer Minus");}
-[+|-]?{digit}+"."{digit}+"-"   {printer("Float Minus");}
-({alpha}({alpha}|{digit})*)"*"   {printer("Identifier Times");}
-([+|-]?{digit}+)"*"   {printer("Integer Times");}
-[+|-]?{digit}+"."{digit}+"*"   {printer("Float Times");}
-({alpha}({alpha}|{digit})*)"/"   {printer("Identifier Divide");}
-([+|-]?{digit}+)"/"   {printer("Integer Divide");}
-[+|-]?{digit}+"."{digit}+"/"   {printer("Float Divide");}
-"("   {printer("LParen");}
-")"   {printer("RParen");}
+{alpha}({alpha}|{digit})*	{ printer("Identifier");}
+("+")+|(("-")("-")(("-")("-"))*)  {printer("Plus");}
+("-")(("-")("-"))* {printer("Minus");}
+([+|-])?{digit}+ 	{ printer("Integer");}
+"*"  {printer("Times");}
+"/" {printer("Divide");}
+"="    {printer("Equals");}
+"("    {printer("LParen");}
+")"    {printer("RParen");}
 [+|-]?{digit}+"."{digit}+			{printer("Float");}
 
 {alpha}({alpha}|{digit})*"="(({alpha}({alpha}|{digit})*)|([+|-]?{digit}*))			{printer("Assignment");}
