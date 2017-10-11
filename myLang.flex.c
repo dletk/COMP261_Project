@@ -1,5 +1,6 @@
+#line 2 "myLang.flex.c"
 
-#line 3 "lex.yy.c"
+#line 4 "myLang.flex.c"
 
 #define  YY_INT_ALIGNED short int
 
@@ -489,7 +490,7 @@ void printer(char*);  // Forward declaration of printing function
  * any procedures you need for it should be declared at the bottom
  * of the file.
  */
-#line 493 "lex.yy.c"
+#line 494 "myLang.flex.c"
 
 #define INITIAL 0
 
@@ -674,7 +675,7 @@ YY_DECL
 #line 41 "myLang.lex"
 
 
-#line 678 "lex.yy.c"
+#line 679 "myLang.flex.c"
 
 	if ( !(yy_init) )
 		{
@@ -823,7 +824,7 @@ YY_RULE_SETUP
 #line 60 "myLang.lex"
 ECHO;
 	YY_BREAK
-#line 827 "lex.yy.c"
+#line 828 "myLang.flex.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 

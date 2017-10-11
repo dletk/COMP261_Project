@@ -27,7 +27,7 @@ void printer(char*);  // Forward declaration of printing function
  * handle everything else
  */
 
-arithmetics [+, -, *, /, /(, /)]
+arithmetics [+, -, *, \/, \(, \)]
 digit	[0-9]
 alpha	[_,a-z,A-Z]
 
@@ -41,8 +41,8 @@ alpha	[_,a-z,A-Z]
 %%
 
 {alpha}({alpha}|{digit})*	{ printer("Identifier");}
-("+")+|(("-")("-")(("-")("-"))*)  {printer("Plus");}
-("-")(("-")("-"))* {printer("Minus");}
+"+"  {printer("Plus");}
+"-" {printer("Minus");}
 ([+|-])?{digit}+ 	{ printer("Integer");}
 "*"  {printer("Times");}
 "/" {printer("Divide");}
@@ -53,7 +53,7 @@ alpha	[_,a-z,A-Z]
 
 {alpha}({alpha}|{digit})*"="(({alpha}({alpha}|{digit})*)|([+|-]?{digit}*))			{printer("Assignment");}
 
-[ \t\n]+		;  /*when see whitespace, do nothing*/
+[ \t\n]+		; /*when see whitespace, do nothing*/
 
 
 
