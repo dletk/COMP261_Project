@@ -76,7 +76,12 @@
      MINUS = 265,
      TIMES = 266,
      DIVIDE = 267,
-     END = 268
+     FOR = 268,
+     WHILE = 269,
+     DO = 270,
+     END = 271,
+     IF = 272,
+     ELSE = 273
    };
 #endif
 /* Tokens.  */
@@ -90,7 +95,12 @@
 #define MINUS 265
 #define TIMES 266
 #define DIVIDE 267
-#define END 268
+#define FOR 268
+#define WHILE 269
+#define DO 270
+#define END 271
+#define IF 272
+#define ELSE 273
 
 
 
@@ -144,7 +154,7 @@ typedef int YYSTYPE;
 
 
 /* Line 216 of yacc.c.  */
-#line 148 "myLang.tab.c"
+#line 158 "myLang.tab.c"
 
 #ifdef short
 # undef short
@@ -362,7 +372,7 @@ union yyalloc
 #define YYLAST   5
 
 /* YYNTOKENS -- Number of terminals.  */
-#define YYNTOKENS  14
+#define YYNTOKENS  19
 /* YYNNTS -- Number of nonterminals.  */
 #define YYNNTS  3
 /* YYNRULES -- Number of rules.  */
@@ -372,7 +382,7 @@ union yyalloc
 
 /* YYTRANSLATE(YYLEX) -- Bison symbol number corresponding to YYLEX.  */
 #define YYUNDEFTOK  2
-#define YYMAXUTOK   268
+#define YYMAXUTOK   273
 
 #define YYTRANSLATE(YYX)						\
   ((unsigned int) (YYX) <= YYMAXUTOK ? yytranslate[YYX] : YYUNDEFTOK)
@@ -406,7 +416,8 @@ static const yytype_uint8 yytranslate[] =
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     1,     2,     3,     4,
-       5,     6,     7,     8,     9,    10,    11,    12,    13
+       5,     6,     7,     8,     9,    10,    11,    12,    13,    14,
+      15,    16,    17,    18
 };
 
 #if YYDEBUG
@@ -420,14 +431,14 @@ static const yytype_uint8 yyprhs[] =
 /* YYRHS -- A `-1'-separated list of the rules' RHS.  */
 static const yytype_int8 yyrhs[] =
 {
-      15,     0,    -1,    16,    -1,    16,    15,    -1,     4,     5,
+      20,     0,    -1,    21,    -1,    21,    20,    -1,     4,     5,
        3,    -1
 };
 
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    52,    52,    53,    55
+       0,    58,    58,    59,    61
 };
 #endif
 
@@ -437,8 +448,8 @@ static const yytype_uint8 yyrline[] =
 static const char *const yytname[] =
 {
   "$end", "error", "$undefined", "INT", "IDENT", "EQUALS", "FLOAT",
-  "LPAREN", "RPAREN", "PLUS", "MINUS", "TIMES", "DIVIDE", "END", "$accept",
-  "assignments", "assign", 0
+  "LPAREN", "RPAREN", "PLUS", "MINUS", "TIMES", "DIVIDE", "FOR", "WHILE",
+  "DO", "END", "IF", "ELSE", "$accept", "assignments", "assign", 0
 };
 #endif
 
@@ -448,14 +459,14 @@ static const char *const yytname[] =
 static const yytype_uint16 yytoknum[] =
 {
        0,   256,   257,   258,   259,   260,   261,   262,   263,   264,
-     265,   266,   267,   268
+     265,   266,   267,   268,   269,   270,   271,   272,   273
 };
 # endif
 
 /* YYR1[YYN] -- Symbol number of symbol that rule YYN derives.  */
 static const yytype_uint8 yyr1[] =
 {
-       0,    14,    15,    15,    16
+       0,    19,    20,    20,    21
 };
 
 /* YYR2[YYN] -- Number of symbols composing right hand side of rule YYN.  */
@@ -511,7 +522,7 @@ static const yytype_int8 yycheck[] =
    symbol of state STATE-NUM.  */
 static const yytype_uint8 yystos[] =
 {
-       0,     4,    15,    16,     5,     0,    15,     3
+       0,     4,    20,    21,     5,     0,    20,     3
 };
 
 #define yyerrok		(yyerrstatus = 0)
@@ -1326,13 +1337,13 @@ yyreduce:
   switch (yyn)
     {
         case 4:
-#line 55 "myLang.y"
+#line 61 "myLang.y"
     { parseprint("assign -> id = int"); ;}
     break;
 
 
 /* Line 1267 of yacc.c.  */
-#line 1336 "myLang.tab.c"
+#line 1347 "myLang.tab.c"
       default: break;
     }
   YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);
@@ -1546,7 +1557,7 @@ yyreturn:
 }
 
 
-#line 59 "myLang.y"
+#line 65 "myLang.y"
 
 
 /* After the next %% divider, we put the code at the end.  I included a printing function, just in case, but

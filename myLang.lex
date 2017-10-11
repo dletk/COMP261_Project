@@ -10,10 +10,10 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-/*
+
 // Included to allow information about tokens from Bison file to propagate to here
 #include "myLang.tab.h" // Leave commented out until Milestone Two
-*/
+
 
 void printer(char*);  // Forward declaration of printing function
 
@@ -27,7 +27,7 @@ void printer(char*);  // Forward declaration of printing function
  * handle everything else
  */
 
-arithmetics [+, -, *, \/, \(, \)]
+arithmetics [+, -, *, /, (, )]
 digit	[0-9]
 alpha	[_,a-z,A-Z]
 
@@ -40,20 +40,28 @@ alpha	[_,a-z,A-Z]
  */
 %%
 
-{alpha}({alpha}|{digit})*	{ printer("Identifier");}
-"+"  {printer("Plus");}
-"-" {printer("Minus");}
-([+|-])?{digit}+ 	{ printer("Integer");}
-"*"  {printer("Times");}
-"/" {printer("Divide");}
-"="    {printer("Equals");}
-"("    {printer("LParen");}
-")"    {printer("RParen");}
-[+|-]?{digit}+"."{digit}+			{printer("Float");}
+"for"   {printer("for"); return FOR;}
+"while"    {printer("while"); return WHILE;}
+"do"    {printer("do"); return DO;}
+"end"    {printer("end"); return END;}
+"if"    {printer("if"); return IF;}
+"else"    {printer("else"); return ELSE;}
 
-{alpha}({alpha}|{digit})*"="(({alpha}({alpha}|{digit})*)|([+|-]?{digit}*))			{printer("Assignment");}
+{alpha}({alpha}|{digit})*	{ printer("Identifier"); return IDENT;}
+[+|-]?{digit}+	 	{ printer("Integer"); return INT;}
+[+|-]?{digit}+"."{digit}+	{printer("Float"); return FLOAT;}
 
-[ \t\n]+		; /*when see whitespace, do nothing*/
+"="    {printer("Equals"); return EQUALS;}
+"+"  {printer("Plus"); return PLUS;}
+"-" {printer("Minus"); return MINUS;}
+"*"  {printer("Times"); return TIMES;}
+"/" {printer("Divide"); return DIVIDE;}
+"("    {printer("LParen"); return LPAREN;}
+")"    {printer("RParen"); return RPAREN;}
+
+
+
+[ \t\n]+		;  /*when see whitespace, do nothing*/
 
 
 

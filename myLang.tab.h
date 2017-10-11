@@ -49,7 +49,12 @@
      MINUS = 265,
      TIMES = 266,
      DIVIDE = 267,
-     END = 268
+     FOR = 268,
+     WHILE = 269,
+     DO = 270,
+     END = 271,
+     IF = 272,
+     ELSE = 273
    };
 #endif
 /* Tokens.  */
@@ -63,7 +68,12 @@
 #define MINUS 265
 #define TIMES 266
 #define DIVIDE 267
-#define END 268
+#define FOR 268
+#define WHILE 269
+#define DO 270
+#define END 271
+#define IF 272
+#define ELSE 273
 
 
 

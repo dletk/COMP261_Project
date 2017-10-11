@@ -31,6 +31,7 @@ void parseprint(char*);  // forward declaration of printing function
 %token INT
 %token IDENT
 %token EQUALS
+
 %token FLOAT
 %token LPAREN
 %token RPAREN
@@ -38,7 +39,12 @@ void parseprint(char*);  // forward declaration of printing function
 %left MINUS
 %left TIMES 
 %left DIVIDE
+%token FOR 
+%token WHILE
+%token DO
 %token END
+%token IF
+%token ELSE
 
 
 %%

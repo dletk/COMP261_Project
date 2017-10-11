@@ -1,5 +1,6 @@
+#line 2 "myLang.lex.c"
 
-#line 3 "lex.yy.c"
+#line 4 "myLang.lex.c"
 
 #define  YY_INT_ALIGNED short int
 
@@ -499,7 +500,7 @@ void printer(char*);  // Forward declaration of printing function
  * any procedures you need for it should be declared at the bottom
  * of the file.
  */
-#line 503 "lex.yy.c"
+#line 504 "myLang.lex.c"
 
 #define INITIAL 0
 
@@ -684,7 +685,7 @@ YY_DECL
 #line 41 "myLang.lex"
 
 
-#line 688 "lex.yy.c"
+#line 689 "myLang.lex.c"
 
 	if ( !(yy_init) )
 		{
@@ -814,51 +815,51 @@ YY_RULE_SETUP
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 55 "myLang.lex"
+#line 54 "myLang.lex"
 {printer("Equals"); return EQUALS;}
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 56 "myLang.lex"
+#line 55 "myLang.lex"
 {printer("Plus"); return PLUS;}
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 57 "myLang.lex"
+#line 56 "myLang.lex"
 {printer("Minus"); return MINUS;}
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 58 "myLang.lex"
+#line 57 "myLang.lex"
 {printer("Times"); return TIMES;}
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 59 "myLang.lex"
+#line 58 "myLang.lex"
 {printer("Divide"); return DIVIDE;}
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 60 "myLang.lex"
+#line 59 "myLang.lex"
 {printer("LParen"); return LPAREN;}
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 61 "myLang.lex"
+#line 60 "myLang.lex"
 {printer("RParen"); return RPAREN;}
 	YY_BREAK
 case 17:
 /* rule 17 can match eol */
 YY_RULE_SETUP
-#line 63 "myLang.lex"
-; /*when see whitespace, do nothing*/
+#line 64 "myLang.lex"
+;  /*when see whitespace, do nothing*/
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 67 "myLang.lex"
+#line 68 "myLang.lex"
 ECHO;
 	YY_BREAK
-#line 862 "lex.yy.c"
+#line 863 "myLang.lex.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1855,7 +1856,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 67 "myLang.lex"
+#line 68 "myLang.lex"
 
 
 
