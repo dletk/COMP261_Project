@@ -71,7 +71,7 @@ L:     END
 |      assignments
 |      comparison
 |      forLoop
-|      if 
+|      if
 |      whileLoop
 ;
 
@@ -103,8 +103,7 @@ expression:   assignments expression
 assignments:     assign     // First rule allows a sequence of assignment statements of any length
 |                assign assignments
 ;
-assign:     IDENT EQUALS E3 END         { parseprint("assign -> id = int"); }
-|           IDENT EQUALS arithmetic END  { parseprint("assign -> id = arithmetic"); }
+assign:     IDENT EQUALS E1 END         { parseprint("assign -> id = something"); }
 ;
 
 forLoop:      FOR IDENT EQUALS INT TO INT DO expression END   { parseprint("for loop"); }
@@ -122,8 +121,7 @@ else:   ELSE DO expression END
 
 
 /* COMPARISON */
-comparison:     E3 compare E3         { parseprint("comparison"); }
-|               E3 compare arithmetic   { parseprint("comparison"); }
+comparison:     E1 compare E1              {parseprint("comparison");}
 |               comparison AND comparison  { parseprint("comparison"); }
 ;
 compare:      GREATER
