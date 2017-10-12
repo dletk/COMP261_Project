@@ -29,22 +29,30 @@ void parseprint(char*);  // forward declaration of printing function
  */
 
 %token INT
-%token IDENT
-%token EQUALS
-
 %token FLOAT
+%token IDENT
+
+%token EQUALS
+%token GREATER
+%token LESS
+
 %token LPAREN
 %token RPAREN
 %left PLUS
 %left MINUS
 %left TIMES
 %left DIVIDE
+
 %token FOR
 %token WHILE
 %token DO
 %token END
 %token IF
 %token ELSE
+%token TO
+
+%token AND
+%token NEWLINE
 
 
 %%
@@ -60,7 +68,14 @@ S:     L                 // First rule allows a sequence of assignment statement
 ;
 L:     END
 |      E1 END
+|      assignments
+|      comparison
+|      forLoop
+|      if 
+|      whileLoop
 ;
+
+/* ARITHMETIC EXPRESSIONS */
 E1:    E1 PLUS E1
 |      E1 MINUS E1
 |      E2
@@ -73,10 +88,59 @@ E3:    INT
 |      FLOAT
 |      IDENT
 |      LPAREN E1 RPAREN
-/*
-L:     IDENT EQUALS INT          { parseprint("assign -> id = int"); }
-*/
 ;
+
+/* STATEMENTS */
+
+expression:   assignments expression
+|             forLoop expression
+|             arithmetic expression
+|             whileLoop expression
+|             /* empty */
+;
+
+assignments:     assign     // First rule allows a sequence of assignment statements of any length
+|                assign assignments
+;
+assign:     IDENT EQUALS E3 END         { parseprint("assign -> id = int"); }
+|           IDENT EQUALS arithmetic END  { parseprint("assign -> id = arithmetic"); }
+;
+
+forLoop:      FOR IDENT EQUALS INT TO INT DO expression END   { parseprint("for loop"); }
+;
+
+whileLoop:    WHILE comparison DO expression END  { parseprint("while loop"); }
+;
+
+if:     IF comparison DO expression else { parseprint("if - else"); }
+;
+
+else:   ELSE DO expression END
+|       END
+;
+
+
+/* COMPARISON */
+comparison:     E3 compare E3         { parseprint("comparison"); }
+|               E3 compare arithmetic   { parseprint("comparison"); }
+|               comparison AND comparison  { parseprint("comparison"); }
+;
+compare:      GREATER
+|             LESS
+|             GREATER EQUALS
+|             LESS EQUALS
+|             EQUALS
+|             GREATER LESS  /* not equal*/
+;
+
+
+/* TO FIX LATER*/
+arithmetic:   E1  /*{ parseprint("arithmetic"); }*/
+;
+
+line:     '\n'  { parseprint("new line"); }
+;
+
 
 
 %%

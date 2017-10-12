@@ -40,40 +40,50 @@
       know about them.  */
    enum yytokentype {
      INT = 258,
-     IDENT = 259,
-     EQUALS = 260,
-     FLOAT = 261,
-     LPAREN = 262,
-     RPAREN = 263,
-     PLUS = 264,
-     MINUS = 265,
-     TIMES = 266,
-     DIVIDE = 267,
-     FOR = 268,
-     WHILE = 269,
-     DO = 270,
-     END = 271,
-     IF = 272,
-     ELSE = 273
+     FLOAT = 259,
+     IDENT = 260,
+     EQUALS = 261,
+     GREATER = 262,
+     LESS = 263,
+     LPAREN = 264,
+     RPAREN = 265,
+     PLUS = 266,
+     MINUS = 267,
+     TIMES = 268,
+     DIVIDE = 269,
+     FOR = 270,
+     WHILE = 271,
+     DO = 272,
+     END = 273,
+     IF = 274,
+     ELSE = 275,
+     TO = 276,
+     AND = 277,
+     NEWLINE = 278
    };
 #endif
 /* Tokens.  */
 #define INT 258
-#define IDENT 259
-#define EQUALS 260
-#define FLOAT 261
-#define LPAREN 262
-#define RPAREN 263
-#define PLUS 264
-#define MINUS 265
-#define TIMES 266
-#define DIVIDE 267
-#define FOR 268
-#define WHILE 269
-#define DO 270
-#define END 271
-#define IF 272
-#define ELSE 273
+#define FLOAT 259
+#define IDENT 260
+#define EQUALS 261
+#define GREATER 262
+#define LESS 263
+#define LPAREN 264
+#define RPAREN 265
+#define PLUS 266
+#define MINUS 267
+#define TIMES 268
+#define DIVIDE 269
+#define FOR 270
+#define WHILE 271
+#define DO 272
+#define END 273
+#define IF 274
+#define ELSE 275
+#define TO 276
+#define AND 277
+#define NEWLINE 278
 
 
 

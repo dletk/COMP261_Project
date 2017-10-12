@@ -41,11 +41,13 @@ alpha	[_,a-z,A-Z]
 %%
 
 "for"   {printer("for"); return FOR;}
+"to"    {printer("to"); return TO;}
 "while"    {printer("while"); return WHILE;}
 "do"    {printer("do"); return DO;}
-";"    {printer("end"); return END;}
 "if"    {printer("if"); return IF;}
 "else"    {printer("else"); return ELSE;}
+";"    {printer("end"); return END;}
+
 
 {alpha}({alpha}|{digit})*	{ printer("Identifier"); return IDENT;}
 [+|-]?{digit}+	 	{ printer("Integer"); return INT;}
@@ -58,6 +60,11 @@ alpha	[_,a-z,A-Z]
 " / " {printer("Divide"); return DIVIDE;}
 "("    {printer("LParen"); return LPAREN;}
 ")"    {printer("RParen"); return RPAREN;}
+" > "    {printer("Greater"); return GREATER;}
+" < "    {printer("Less"); return LESS;}
+" and "    {printer("And"); return AND;}
+"/n" {return (NEWLINE);}
+
 
 
 
@@ -74,5 +81,5 @@ alpha	[_,a-z,A-Z]
 
 void printer(char* str)
 {
-  printf("      Recognized %s: %s\n", str, yytext);
+  /*printf("      Recognized %s: %s\n", str, yytext);*/
 }
