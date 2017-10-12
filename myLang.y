@@ -96,6 +96,7 @@ expression:   assignments expression
 |             forLoop expression
 |             arithmetic expression
 |             whileLoop expression
+|             if expression
 |             /* empty */
 ;
 
@@ -129,7 +130,7 @@ compare:      GREATER
 |             LESS
 |             GREATER EQUALS
 |             LESS EQUALS
-|             EQUALS
+|             EQUALS EQUALS
 |             GREATER LESS  /* not equal*/
 ;
 
@@ -138,8 +139,8 @@ compare:      GREATER
 arithmetic:   E1  /*{ parseprint("arithmetic"); }*/
 ;
 
-line:     '\n'  { parseprint("new line"); }
-;
+/*line:     '\n'  { parseprint("new line"); }
+; */
 
 
 
