@@ -37,9 +37,9 @@ void parseprint(char*);  // forward declaration of printing function
 %token RPAREN
 %left PLUS
 %left MINUS
-%left TIMES 
+%left TIMES
 %left DIVIDE
-%token FOR 
+%token FOR
 %token WHILE
 %token DO
 %token END
@@ -55,10 +55,27 @@ void parseprint(char*);  // forward declaration of printing function
  * additional rules follow, one per line, with a semi-colon marking the end of a set of rules for a given LHS
  */
 
-assignments:     assign                 // First rule allows a sequence of assignment statements of any length
-|                assign assignments
+S:     L                 // First rule allows a sequence of assignment statements of any length
+|      L S
 ;
-assign:     IDENT EQUALS INT          { parseprint("assign -> id = int"); }
+L:     END
+|      E1 END
+;
+E1:    E1 PLUS E1
+|      E1 MINUS E1
+|      E2
+;
+E2:    E2 TIMES E2
+|      E2 DIVIDE E2
+|      E3
+;
+E3:    INT
+|      FLOAT
+|      IDENT
+|      LPAREN E1 RPAREN
+/*
+L:     IDENT EQUALS INT          { parseprint("assign -> id = int"); }
+*/
 ;
 
 

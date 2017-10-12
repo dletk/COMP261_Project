@@ -43,7 +43,7 @@ alpha	[_,a-z,A-Z]
 "for"   {printer("for"); return FOR;}
 "while"    {printer("while"); return WHILE;}
 "do"    {printer("do"); return DO;}
-"end"    {printer("end"); return END;}
+";"    {printer("end"); return END;}
 "if"    {printer("if"); return IF;}
 "else"    {printer("else"); return ELSE;}
 
@@ -51,11 +51,11 @@ alpha	[_,a-z,A-Z]
 [+|-]?{digit}+	 	{ printer("Integer"); return INT;}
 [+|-]?{digit}+"."{digit}+	{printer("Float"); return FLOAT;}
 
-"="    {printer("Equals"); return EQUALS;}
-"+"  {printer("Plus"); return PLUS;}
-"-" {printer("Minus"); return MINUS;}
-"*"  {printer("Times"); return TIMES;}
-"/" {printer("Divide"); return DIVIDE;}
+" = "    {printer("Equals"); return EQUALS;}
+" + "  {printer("Plus"); return PLUS;}
+" - " {printer("Minus"); return MINUS;}
+" * "  {printer("Times"); return TIMES;}
+" / " {printer("Divide"); return DIVIDE;}
 "("    {printer("LParen"); return LPAREN;}
 ")"    {printer("RParen"); return RPAREN;}
 
