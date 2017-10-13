@@ -46,6 +46,7 @@ alpha	[_,a-z,A-Z]
 "if"    {printer("if"); return IF;}
 "else"    {printer("else"); return ELSE;}
 "end"    {printer("end"); return END;}
+"elif"    {printer("else if"); return ELIF;}
 
 {alpha}({alpha}|{digit})*	{ printer("Identifier"); return IDENT;}
 [+|-]?{digit}+	 	{ printer("Integer"); return INT;}

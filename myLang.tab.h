@@ -62,8 +62,9 @@
      IF = 278,
      ELSE = 279,
      TO = 280,
-     AND = 281,
-     OR = 282
+     ELIF = 281,
+     AND = 282,
+     OR = 283
    };
 #endif
 /* Tokens.  */
@@ -90,8 +91,9 @@
 #define IF 278
 #define ELSE 279
 #define TO 280
-#define AND 281
-#define OR 282
+#define ELIF 281
+#define AND 282
+#define OR 283
 
 
 

@@ -54,6 +54,7 @@ void parseprint(char*);  // forward declaration of printing function
 %token IF
 %token ELSE
 %token TO
+%token ELIF
 
 %token AND
 %token OR
@@ -127,7 +128,7 @@ whileLoop:    WHILE comparison DO expression END  { parseprint("while loop"); }
 if:     IF comparison DO expression END elif else { parseprint("if - else"); }
 ;
 
-elif:     ELSE IF comparison DO expression END elif { parseprint("if - else if"); }
+elif:     ELIF comparison DO expression END elif { parseprint("if - else if"); }
 |         /* empty */
 ;
 
