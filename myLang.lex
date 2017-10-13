@@ -39,6 +39,13 @@ alpha	[_,a-z,A-Z]
  * of the file.
  */
 %%
+"for"   {printer("for"); return FOR;}
+"to"    {printer("to"); return TO;}
+"while"    {printer("while"); return WHILE;}
+"do"    {printer("do"); return DO;}
+"if"    {printer("if"); return IF;}
+"else"    {printer("else"); return ELSE;}
+"end"    {printer("end"); return END;}
 
 {alpha}({alpha}|{digit})*	{ printer("Identifier"); return IDENT;}
 [+|-]?{digit}+	 	{ printer("Integer"); return INT;}
@@ -59,13 +66,6 @@ alpha	[_,a-z,A-Z]
 " != "   {printer("Not Equals"); return NOT_EQUALS;}
 
 
-"for"   {printer("for"); return FOR;}
-"to"    {printer("to"); return TO;}
-"while"    {printer("while"); return WHILE;}
-"do"    {printer("do"); return DO;}
-"if"    {printer("if"); return IF;}
-"else"    {printer("else"); return ELSE;}
-"end"    {printer("end"); return END;}
 
 " and "    {printer("And"); return AND;}
 " or "     {printer("Or"); return OR;}

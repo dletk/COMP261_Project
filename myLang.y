@@ -125,7 +125,7 @@ else:   ELSE DO expression END
 
 
 /* COMPARISON */
-comparison:     E1 compare E1              {parseprint("comparison");}
+comparison:     E1 compare E1              { parseprint("comparison");}
 |               comparison AND comparison  { parseprint("comparison - and relationship"); }
 |               comparison OR comparison   { parseprint("comparison - or relationship")}
 ;

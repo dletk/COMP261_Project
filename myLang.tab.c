@@ -1454,7 +1454,7 @@ yyreduce:
 
   case 35:
 #line 128 "myLang.y"
-    {parseprint("comparison");;}
+    { parseprint("comparison");;}
     break;
 
   case 36:

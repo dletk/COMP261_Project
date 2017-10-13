@@ -703,8 +703,7 @@ YY_DECL
     
 #line 41 "myLang.lex"
 
-
-#line 708 "myLang.lex.c"
+#line 707 "myLang.lex.c"
 
 	if ( !(yy_init) )
 		{
@@ -789,127 +788,127 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 43 "myLang.lex"
+#line 42 "myLang.lex"
 {printer("for"); return FOR;}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 44 "myLang.lex"
+#line 43 "myLang.lex"
 {printer("to"); return TO;}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 45 "myLang.lex"
+#line 44 "myLang.lex"
 {printer("while"); return WHILE;}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 46 "myLang.lex"
+#line 45 "myLang.lex"
 {printer("do"); return DO;}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 47 "myLang.lex"
+#line 46 "myLang.lex"
 {printer("if"); return IF;}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 48 "myLang.lex"
+#line 47 "myLang.lex"
 {printer("else"); return ELSE;}
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 49 "myLang.lex"
-{printer("end"); return END;} ;  /*when see whitespace, do nothing*/
+#line 48 "myLang.lex"
+{printer("end"); return END;}
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 52 "myLang.lex"
+#line 50 "myLang.lex"
 { printer("Identifier"); return IDENT;}
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 53 "myLang.lex"
+#line 51 "myLang.lex"
 { printer("Integer"); return INT;}
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 54 "myLang.lex"
+#line 52 "myLang.lex"
 {printer("Float"); return FLOAT;}
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 56 "myLang.lex"
+#line 54 "myLang.lex"
 {printer("Equals"); return EQUALS;}
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 57 "myLang.lex"
+#line 55 "myLang.lex"
 {printer("Plus"); return PLUS;}
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 58 "myLang.lex"
+#line 56 "myLang.lex"
 {printer("Minus"); return MINUS;}
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 59 "myLang.lex"
+#line 57 "myLang.lex"
 {printer("Times"); return TIMES;}
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 60 "myLang.lex"
+#line 58 "myLang.lex"
 {printer("Divide"); return DIVIDE;}
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 61 "myLang.lex"
+#line 59 "myLang.lex"
 {printer("LParen"); return LPAREN;}
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 62 "myLang.lex"
+#line 60 "myLang.lex"
 {printer("RParen"); return RPAREN;}
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 63 "myLang.lex"
+#line 61 "myLang.lex"
 {printer("Greater"); return GREATER;}
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 64 "myLang.lex"
+#line 62 "myLang.lex"
 {printer("Less"); return LESS;}
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 65 "myLang.lex"
+#line 63 "myLang.lex"
 {printer("Less or Equals"); return LESS_EQUALS;}
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 66 "myLang.lex"
+#line 64 "myLang.lex"
 {printer("Greater or Equals"); return GREATER_EQUALS;}
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 67 "myLang.lex"
+#line 65 "myLang.lex"
 {printer("Equals Comparison"); return EQUALS_EQUALS;}
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 68 "myLang.lex"
+#line 66 "myLang.lex"
 {printer("Not Equals"); return NOT_EQUALS;}
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 69 "myLang.lex"
+#line 70 "myLang.lex"
 {printer("And"); return AND;}
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 70 "myLang.lex"
+#line 71 "myLang.lex"
 {printer("Or"); return OR;}
 	YY_BREAK
 case 26:
@@ -920,10 +919,10 @@ YY_RULE_SETUP
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 78 "myLang.lex"
+#line 76 "myLang.lex"
 ECHO;
 	YY_BREAK
-#line 927 "myLang.lex.c"
+#line 926 "myLang.lex.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1920,7 +1919,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 78 "myLang.lex"
+#line 76 "myLang.lex"
 
 
 
