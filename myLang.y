@@ -110,13 +110,17 @@ assign:     IDENT EQUALS E1         { parseprint("assign -> id = something"); }
 ;
 
 
-forLoop:      FOR IDENT EQUALS INT TO INT DO expression END   { parseprint("for loop"); }
+forLoop:      FOR IDENT EQUALS E1 TO E1 DO expression END   { parseprint("for loop"); }
 ;
 
 whileLoop:    WHILE comparison DO expression END  { parseprint("while loop"); }
 ;
 
-if:     IF comparison DO expression else { parseprint("if - else"); }
+if:     IF comparison DO expression elif else { parseprint("if - else"); }
+;
+
+elif:     ELSE IF comparison DO expression elif END { parseprint("if - else if"); }
+|         /* empty */
 ;
 
 else:   ELSE DO expression END
