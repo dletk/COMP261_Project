@@ -116,15 +116,23 @@ forLoop:      FOR IDENT EQUALS E1 TO E1 DO expression END   { parseprint("for lo
 whileLoop:    WHILE comparison DO expression END  { parseprint("while loop"); }
 ;
 
-if:     IF comparison DO expression elif else { parseprint("if - else"); }
+// Working version
+// if:     IF comparison DO expression else { parseprint("if - else"); }
+// ;
+
+// else:   ELSE DO expression END
+// |       END /* empty*/
+// ;
+
+if:     IF comparison DO expression END elif else { parseprint("if - else"); }
 ;
 
-elif:     ELSE IF comparison DO expression elif END { parseprint("if - else if"); }
+elif:     ELSE IF comparison DO expression END elif { parseprint("if - else if"); }
 |         /* empty */
 ;
 
 else:   ELSE DO expression END
-|       END /* empty*/
+|       /* empty*/
 ;
 
 
