@@ -63,8 +63,7 @@
      ELSE = 279,
      TO = 280,
      AND = 281,
-     OR = 282,
-     NEWLINE = 283
+     OR = 282
    };
 #endif
 /* Tokens.  */
@@ -93,7 +92,6 @@
 #define TO 280
 #define AND 281
 #define OR 282
-#define NEWLINE 283
 
 
 

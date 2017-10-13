@@ -57,8 +57,6 @@ void parseprint(char*);  // forward declaration of printing function
 
 %token AND
 %token OR
-%token NEWLINE
-
 
 %%
 
@@ -68,20 +66,20 @@ void parseprint(char*);  // forward declaration of printing function
  * additional rules follow, one per line, with a semi-colon marking the end of a set of rules for a given LHS
  */
 
-S:     L                 // First rule allows a sequence of assignment statements of any length
-|      L S
+S:     L             // First rule allows a sequence of assignment statements of any length
+|      L S 
 ;
-L:     END
-|      E1 END
+L:     E1   { parseprint("Arithmetic expression"); }
 |      assignments
 |      comparison
 |      forLoop
 |      if
 |      whileLoop
+|      /*empty*/
 ;
 
 /* ARITHMETIC EXPRESSIONS */
-E1:    E1 PLUS E1
+E1:    E1 PLUS E1  
 |      E1 MINUS E1
 |      E2
 ;
@@ -102,26 +100,26 @@ expression:   assignments expression
 |             arithmetic expression
 |             whileLoop expression
 |             if expression
-|             /* empty */
+|             /* empty */ { parseprint("empty expression"); }
 ;
 
 assignments:     assign     // First rule allows a sequence of assignment statements of any length
 |                assign assignments
 ;
-assign:     IDENT EQUALS E1 END         { parseprint("assign -> id = something"); }
+assign:     IDENT EQUALS E1         { parseprint("assign -> id = something"); }
 ;
 
-forLoop:      FOR IDENT EQUALS INT TO INT DO expression   { parseprint("for loop"); }
+forLoop:      FOR IDENT EQUALS INT TO INT DO expression END   { parseprint("for loop"); }
 ;
 
-whileLoop:    WHILE comparison DO expression  { parseprint("while loop"); }
+whileLoop:    WHILE comparison DO expression END  { parseprint("while loop"); }
 ;
 
 if:     IF comparison DO expression else { parseprint("if - else"); }
 ;
 
-else:   ELSE DO expression
-|       /* empty*/
+else:   ELSE DO expression END
+|       END /* empty*/
 ;
 
 

@@ -46,7 +46,7 @@ alpha	[_,a-z,A-Z]
 "do"    {printer("do"); return DO;}
 "if"    {printer("if"); return IF;}
 "else"    {printer("else"); return ELSE;}
-";"    {printer("end"); return END;}
+"end"    {printer("end"); return END;} 
 
 
 {alpha}({alpha}|{digit})*	{ printer("Identifier"); return IDENT;}
@@ -68,8 +68,6 @@ alpha	[_,a-z,A-Z]
 " != "   {printer("Not Equals"); return NOT_EQUALS;}
 " and "    {printer("And"); return AND;}
 " or "     {printer("Or"); return OR;}
-"/n" {return (NEWLINE);}
-
 
 
 
