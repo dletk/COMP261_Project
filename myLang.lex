@@ -40,15 +40,6 @@ alpha	[_,a-z,A-Z]
  */
 %%
 
-"for"   {printer("for"); return FOR;}
-"to"    {printer("to"); return TO;}
-"while"    {printer("while"); return WHILE;}
-"do"    {printer("do"); return DO;}
-"if"    {printer("if"); return IF;}
-"else"    {printer("else"); return ELSE;}
-"end"    {printer("end"); return END;} 
-
-
 {alpha}({alpha}|{digit})*	{ printer("Identifier"); return IDENT;}
 [+|-]?{digit}+	 	{ printer("Integer"); return INT;}
 [+|-]?{digit}+"."{digit}+	{printer("Float"); return FLOAT;}
@@ -66,14 +57,21 @@ alpha	[_,a-z,A-Z]
 " >= "   {printer("Greater or Equals"); return GREATER_EQUALS;}
 " == "   {printer("Equals Comparison"); return EQUALS_EQUALS;}
 " != "   {printer("Not Equals"); return NOT_EQUALS;}
+
+
+"for"   {printer("for"); return FOR;}
+"to"    {printer("to"); return TO;}
+"while"    {printer("while"); return WHILE;}
+"do"    {printer("do"); return DO;}
+"if"    {printer("if"); return IF;}
+"else"    {printer("else"); return ELSE;}
+"end"    {printer("end"); return END;}
+
 " and "    {printer("And"); return AND;}
 " or "     {printer("Or"); return OR;}
 
 
-
 [ \t\n]+		;  /*when see whitespace, do nothing*/
-
-
 
 %%
 

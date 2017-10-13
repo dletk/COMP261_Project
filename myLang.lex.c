@@ -820,7 +820,7 @@ YY_RULE_SETUP
 case 7:
 YY_RULE_SETUP
 #line 49 "myLang.lex"
-{printer("end"); return END;} 
+{printer("end"); return END;} ;  /*when see whitespace, do nothing*/
 	YY_BREAK
 case 8:
 YY_RULE_SETUP

@@ -69,8 +69,9 @@ void parseprint(char*);  // forward declaration of printing function
 S:     L             // First rule allows a sequence of assignment statements of any length
 |      L S 
 ;
-L:     E1   { parseprint("Arithmetic expression"); }
-|      assignments
+L:     END
+|      E1 END   { parseprint("Arithmetic expression"); }
+|      assignments 
 |      comparison
 |      forLoop
 |      if
@@ -97,10 +98,9 @@ E3:    INT
 
 expression:   assignments expression
 |             forLoop expression
-|             arithmetic expression
 |             whileLoop expression
 |             if expression
-|             /* empty */ { parseprint("empty expression"); }
+|             /* empty */
 ;
 
 assignments:     assign     // First rule allows a sequence of assignment statements of any length
@@ -108,6 +108,7 @@ assignments:     assign     // First rule allows a sequence of assignment statem
 ;
 assign:     IDENT EQUALS E1         { parseprint("assign -> id = something"); }
 ;
+
 
 forLoop:      FOR IDENT EQUALS INT TO INT DO expression END   { parseprint("for loop"); }
 ;
@@ -125,8 +126,8 @@ else:   ELSE DO expression END
 
 /* COMPARISON */
 comparison:     E1 compare E1              {parseprint("comparison");}
-|               comparison AND comparison  { parseprint("and relationship"); }
-|               comparison OR comparison   { parseprint("or relationship")}
+|               comparison AND comparison  { parseprint("comparison - and relationship"); }
+|               comparison OR comparison   { parseprint("comparison - or relationship")}
 ;
 compare:      GREATER
 |             LESS
@@ -135,15 +136,6 @@ compare:      GREATER
 |             EQUALS_EQUALS
 |             NOT_EQUALS  /* not equal*/
 ;
-
-
-/* TO FIX LATER*/
-arithmetic:   E1  /*{ parseprint("arithmetic"); }*/
-;
-
-/*line:     '\n'  { parseprint("new line"); }
-; */
-
 
 
 %%
