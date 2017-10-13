@@ -62,7 +62,12 @@ alpha	[_,a-z,A-Z]
 ")"    {printer("RParen"); return RPAREN;}
 " > "    {printer("Greater"); return GREATER;}
 " < "    {printer("Less"); return LESS;}
+" <= "   {printer("Less or Equals"); return LESS_EQUALS;}
+" >= "   {printer("Greater or Equals"); return GREATER_EQUALS;}
+" == "   {printer("Equals Comparison"); return EQUALS_EQUALS;}
+" != "   {printer("Not Equals"); return NOT_EQUALS;}
 " and "    {printer("And"); return AND;}
+" or "     {printer("Or"); return OR;}
 "/n" {return (NEWLINE);}
 
 

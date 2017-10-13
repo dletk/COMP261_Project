@@ -35,6 +35,10 @@ void parseprint(char*);  // forward declaration of printing function
 %token EQUALS
 %token GREATER
 %token LESS
+%token EQUALS_EQUALS
+%token NOT_EQUALS
+%token GREATER_EQUALS
+%token LESS_EQUALS
 
 %token LPAREN
 %token RPAREN
@@ -52,6 +56,7 @@ void parseprint(char*);  // forward declaration of printing function
 %token TO
 
 %token AND
+%token OR
 %token NEWLINE
 
 
@@ -106,30 +111,31 @@ assignments:     assign     // First rule allows a sequence of assignment statem
 assign:     IDENT EQUALS E1 END         { parseprint("assign -> id = something"); }
 ;
 
-forLoop:      FOR IDENT EQUALS INT TO INT DO expression END   { parseprint("for loop"); }
+forLoop:      FOR IDENT EQUALS INT TO INT DO expression   { parseprint("for loop"); }
 ;
 
-whileLoop:    WHILE comparison DO expression END  { parseprint("while loop"); }
+whileLoop:    WHILE comparison DO expression  { parseprint("while loop"); }
 ;
 
 if:     IF comparison DO expression else { parseprint("if - else"); }
 ;
 
-else:   ELSE DO expression END
-|       END
+else:   ELSE DO expression
+|       /* empty*/
 ;
 
 
 /* COMPARISON */
 comparison:     E1 compare E1              {parseprint("comparison");}
-|               comparison AND comparison  { parseprint("comparison"); }
+|               comparison AND comparison  { parseprint("and relationship"); }
+|               comparison OR comparison   { parseprint("or relationship")}
 ;
 compare:      GREATER
 |             LESS
-|             GREATER EQUALS
-|             LESS EQUALS
-|             EQUALS EQUALS
-|             GREATER LESS  /* not equal*/
+|             GREATER_EQUALS
+|             LESS_EQUALS
+|             EQUALS_EQUALS
+|             NOT_EQUALS  /* not equal*/
 ;
 
 

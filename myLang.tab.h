@@ -45,21 +45,26 @@
      EQUALS = 261,
      GREATER = 262,
      LESS = 263,
-     LPAREN = 264,
-     RPAREN = 265,
-     PLUS = 266,
-     MINUS = 267,
-     TIMES = 268,
-     DIVIDE = 269,
-     FOR = 270,
-     WHILE = 271,
-     DO = 272,
-     END = 273,
-     IF = 274,
-     ELSE = 275,
-     TO = 276,
-     AND = 277,
-     NEWLINE = 278
+     EQUALS_EQUALS = 264,
+     NOT_EQUALS = 265,
+     GREATER_EQUALS = 266,
+     LESS_EQUALS = 267,
+     LPAREN = 268,
+     RPAREN = 269,
+     PLUS = 270,
+     MINUS = 271,
+     TIMES = 272,
+     DIVIDE = 273,
+     FOR = 274,
+     WHILE = 275,
+     DO = 276,
+     END = 277,
+     IF = 278,
+     ELSE = 279,
+     TO = 280,
+     AND = 281,
+     OR = 282,
+     NEWLINE = 283
    };
 #endif
 /* Tokens.  */
@@ -69,21 +74,26 @@
 #define EQUALS 261
 #define GREATER 262
 #define LESS 263
-#define LPAREN 264
-#define RPAREN 265
-#define PLUS 266
-#define MINUS 267
-#define TIMES 268
-#define DIVIDE 269
-#define FOR 270
-#define WHILE 271
-#define DO 272
-#define END 273
-#define IF 274
-#define ELSE 275
-#define TO 276
-#define AND 277
-#define NEWLINE 278
+#define EQUALS_EQUALS 264
+#define NOT_EQUALS 265
+#define GREATER_EQUALS 266
+#define LESS_EQUALS 267
+#define LPAREN 268
+#define RPAREN 269
+#define PLUS 270
+#define MINUS 271
+#define TIMES 272
+#define DIVIDE 273
+#define FOR 274
+#define WHILE 275
+#define DO 276
+#define END 277
+#define IF 278
+#define ELSE 279
+#define TO 280
+#define AND 281
+#define OR 282
+#define NEWLINE 283
 
 
 
