@@ -104,11 +104,7 @@ expression:   assignments expression
 |             /* empty */
 ;
 
-assignments:     assign     // First rule allows a sequence of assignment statements of any length
-|                assign assignments
-;
-assign:     IDENT EQUALS E1         { parseprint("assign -> id = something"); }
-;
+assignments:     IDENT EQUALS E1         { parseprint("assign -> id = something"); }
 
 
 forLoop:      FOR IDENT EQUALS E1 TO E1 DO expression END   { parseprint("for loop"); }
@@ -116,14 +112,6 @@ forLoop:      FOR IDENT EQUALS E1 TO E1 DO expression END   { parseprint("for lo
 
 whileLoop:    WHILE comparison DO expression END  { parseprint("while loop"); }
 ;
-
-// Working version
-// if:     IF comparison DO expression else { parseprint("if - else"); }
-// ;
-
-// else:   ELSE DO expression END
-// |       END /* empty*/
-// ;
 
 if:     IF comparison DO expression END elif else { parseprint("if - else"); }
 ;
